@@ -8,6 +8,7 @@ com\proyecto\portfolio\security\service\UsuarioService.class
 com\proyecto\portfolio\repository\REducacion.class
 com\proyecto\portfolio\service\SPersona.class
 com\proyecto\portfolio\controller\CHabilidades.class
+com\proyecto\portfolio\WebConfig.class
 com\proyecto\portfolio\controller\CPersona.class
 com\proyecto\portfolio\security\repository\iUsuarioRepository.class
 com\proyecto\portfolio\security\MainSecurity.class
