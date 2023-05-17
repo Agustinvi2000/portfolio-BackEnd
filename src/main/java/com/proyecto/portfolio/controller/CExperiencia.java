@@ -26,7 +26,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("trabajos")  //localhost:8080/trabajos
-@CrossOrigin(origins = "http://localhost:4200") //es localhost:4200 pues es el que uso para Angular
+/*@CrossOrigin(origins = "http://localhost:4200") //es localhost:4200 pues es el que uso para Angular*/
+@CrossOrigin
 public class CExperiencia {
 
     @Autowired

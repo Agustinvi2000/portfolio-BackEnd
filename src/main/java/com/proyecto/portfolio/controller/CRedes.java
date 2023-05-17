@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("redes")  //localhost:8080/redes
-@CrossOrigin(origins = "http://localhost:4200") //es localhost:4200 pues es el que uso para Angular
+/*@CrossOrigin(origins = "http://localhost:4200") //es localhost:4200 pues es el que uso para Angular*/
+@CrossOrigin
 public class CRedes {
     @Autowired
     SRedes redServ;
