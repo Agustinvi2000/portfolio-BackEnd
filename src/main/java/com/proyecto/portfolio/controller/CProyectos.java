@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("proyectos")  //localhost:8080/proyectos
-/*@CrossOrigin(origins = "http://localhost:4200") //es localhost:4200 pues es el que uso para Angular*/
+//@CrossOrigin(origins = "http://localhost:4200") //es localhost:4200 pues es el que uso para Angular*/
 @CrossOrigin
 public class CProyectos {
     @Autowired
@@ -37,15 +37,15 @@ public class CProyectos {
     }
     
     @PostMapping("/crear")
-    public String agregarProyecto (@RequestBody Proyectos proye){
+    public void agregarProyecto (@RequestBody Proyectos proye){
         proyServ.crearProyecto(proye);
-        return "El proyecto fue creado correctamente";
+        //return "El proyecto fue creado correctamente";
     }
     
     @DeleteMapping("/borrar/{id}")
-    public String eliminarProyecto(@PathVariable int id){
+    public void eliminarProyecto(@PathVariable int id){
         proyServ.borrarProyecto(id);
-        return "El proyecto fue borrado correctamente";
+        //return "El proyecto fue borrado correctamente";
     }
     
     // otra forma de editar proyecto

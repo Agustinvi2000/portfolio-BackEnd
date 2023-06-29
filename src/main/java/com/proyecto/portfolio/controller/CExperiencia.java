@@ -10,7 +10,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("trabajos")  //localhost:8080/trabajos
-/*@CrossOrigin(origins = "http://localhost:4200") //es localhost:4200 pues es el que uso para Angular*/
+//@CrossOrigin(origins = "http://localhost:4200") //es localhost:4200 pues es el que uso para Angular*/
 @CrossOrigin
 public class CExperiencia {
 
@@ -39,21 +39,21 @@ public class CExperiencia {
         return experServ.verTrabajos();
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+//    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/ver/{id}")
     @ResponseBody
     public Experiencia verTrabajo(@PathVariable int id) {
         return experServ.buscarTrabajo(id);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+//    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/crear")
     public void agregarTrabajo(@RequestBody Experiencia expe) {
         experServ.crearTrabajo(expe);
 //        return "El trabajo fue creado correctamente";
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+//    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/borrar/{id}")
     public void eliminarTrabajo(@PathVariable int id) {
         experServ.borrarTrabajo(id);
@@ -61,7 +61,7 @@ public class CExperiencia {
     }
 
     // otra forma de editar experiencia
-    @PreAuthorize("hasRole('ADMIN')")
+//    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/editar")
     public void updateTrabajo(@RequestBody Experiencia expe) {
         experServ.editarTrabajo(expe);
@@ -70,7 +70,7 @@ public class CExperiencia {
     @Autowired
     private ServletContext servletContext;
 
-    @PreAuthorize("hasRole('ADMIN')")
+//    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/upload")
     public ResponseEntity<String> uploadImage(@RequestParam("file") MultipartFile file) {
         try {

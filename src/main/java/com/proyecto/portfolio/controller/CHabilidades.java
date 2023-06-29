@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("habilidades")  //localhost:8080/habilidades
-/*@CrossOrigin(origins = "http://localhost:4200") //es localhost:4200 pues es el que uso para Angular*/
+//@CrossOrigin(origins = "http://localhost:4200") //es localhost:4200 pues es el que uso para Angular*/
 @CrossOrigin
 public class CHabilidades {
     @Autowired
@@ -37,15 +37,15 @@ public class CHabilidades {
     }
     
     @PostMapping("/crear")
-    public String agregarHabilidad (@RequestBody Habilidades hibili){
+    public void agregarHabilidad (@RequestBody Habilidades hibili){
         habilServ.crearHabilidad(hibili);
-        return "La habilidad fue creada correctamente";
+       // return "La habilidad fue creada correctamente";
     }
     
     @DeleteMapping("/borrar/{id}")
-    public String eliminarHabilidad(@PathVariable int id){
+    public void eliminarHabilidad(@PathVariable int id){
         habilServ.borrarHabilidad(id);
-        return "La habilidad fue borrada correctamente";
+      //  return "La habilidad fue borrada correctamente";
     }
     
     // otra forma de editar habilidad

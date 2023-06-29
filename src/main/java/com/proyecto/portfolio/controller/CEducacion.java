@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("estudios")  //localhost:8080/estudios
-/*@CrossOrigin(origins = "http://localhost:4200") //es localhost:4200 pues es el que uso para Angular*/
+//@CrossOrigin(origins = "http://localhost:4200") //es localhost:4200 pues es el que uso para Angular
 @CrossOrigin
 public class CEducacion {
     @Autowired
@@ -37,15 +37,15 @@ public class CEducacion {
     }
     
     @PostMapping("/crear")
-    public String agregarEstudio (@RequestBody Educacion educ){
+    public void agregarEstudio (@RequestBody Educacion educ){
         educaServ.crearEstudio(educ);
-        return "El estudio fue creado correctamente";
+       // return "El estudio fue creado correctamente";
     }
     
     @DeleteMapping("/borrar/{id}")
-    public String eliminarEstudio(@PathVariable int id){
+    public void eliminarEstudio(@PathVariable int id){
         educaServ.borrarEstudio(id);
-        return "El estudio fue borrado correctamente";
+      //  return "El estudio fue borrado correctamente";
     }
     
     // otra forma de editar educacion

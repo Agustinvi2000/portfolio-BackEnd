@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("redes")  //localhost:8080/redes
-/*@CrossOrigin(origins = "http://localhost:4200") //es localhost:4200 pues es el que uso para Angular*/
+//@CrossOrigin(origins = "http://localhost:4200") //es localhost:4200 pues es el que uso para Angular*/
 @CrossOrigin
 public class CRedes {
     @Autowired
@@ -37,15 +37,15 @@ public class CRedes {
     }
     
     @PostMapping("/crear")
-    public String agregarRed (@RequestBody Redes redes){
+    public void agregarRed (@RequestBody Redes redes){
         redServ.crearRed(redes);
-        return "La red fue creada correctamente";
+       // return "La red fue creada correctamente";
     }
     
     @DeleteMapping("/borrar/{id}")
-    public String eliminarRed(@PathVariable int id){
+    public void eliminarRed(@PathVariable int id){
         redServ.borrarRed(id);
-        return "La red fue borrada correctamente";
+       // return "La red fue borrada correctamente";
     }
     
     // otra forma de editar redes
