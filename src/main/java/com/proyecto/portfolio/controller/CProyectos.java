@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("proyectos")  //localhost:8080/proyectos
 //@CrossOrigin(origins = "http://localhost:4200") //es localhost:4200 pues es el que uso para Angular*/
-@CrossOrigin
+@CrossOrigin(origins = "https://portfolio-avi.web.app")
 public class CProyectos {
     @Autowired
     SProyectos proyServ;

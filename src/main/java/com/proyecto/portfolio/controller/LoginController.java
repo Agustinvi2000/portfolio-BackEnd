@@ -8,8 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin
-@RequestMapping("/auth")
+@CrossOrigin(origins = "https://portfolio-avi.web.app")
+@RequestMapping("auth")
 public class LoginController {
     @Autowired
     private LoginService loginService;

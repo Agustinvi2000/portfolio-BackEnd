@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("estudios")  //localhost:8080/estudios
 //@CrossOrigin(origins = "http://localhost:4200") //es localhost:4200 pues es el que uso para Angular
-@CrossOrigin
+@CrossOrigin(origins = "https://portfolio-avi.web.app")
 public class CEducacion {
     @Autowired
     SEducacion educaServ;
