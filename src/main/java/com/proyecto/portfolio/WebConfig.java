@@ -16,6 +16,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
 @Override
 public void addCorsMappings(CorsRegistry registry) {
-registry.addMapping("/**");
+registry.addMapping("/**")
+                .allowedOrigins("https://portfolio-avi.web.app") // Reemplaza con tu dominio permitido
+                .allowedMethods("GET", "POST", "PUT", "DELETE")
+                .allowedHeaders("Authorization", "Content-Type", "Access-Control-Allow-Origin")
+                .allowCredentials(true);
 }
 }
